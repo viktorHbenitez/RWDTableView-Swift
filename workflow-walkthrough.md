@@ -2,4 +2,4 @@
 
 ## Using delegate and protocol of the TableView
 
-![imagen](../master/assets/sketch2.gif)
+![imagen](../master/assets/sketch1.gif)
