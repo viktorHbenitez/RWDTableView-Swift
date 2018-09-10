@@ -1,6 +1,9 @@
 # UITableView - CheckList App
 
-## Using delegate and protocol of the TableView
+### Understanding MVC
+### Use model object
+### Array to store data
+
 
 ![imagen](../master/assets/sketch2.gif)  
 
@@ -56,7 +59,7 @@ func configureCheckmark(for cell: UITableViewCell,
 }
 ```
 RESULTS:    
-![imagen](../master/assets/image1.png)  
+![imagen](../feature-MVC/assets/image1.png)  
 
 ## Change the value of the checkMark  when is tapped only 4 rows
 
