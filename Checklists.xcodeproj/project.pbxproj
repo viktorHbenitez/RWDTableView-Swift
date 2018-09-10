@@ -12,6 +12,7 @@
 		7B2952A31D2A44A3000B9D60 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B2952A11D2A44A3000B9D60 /* Main.storyboard */; };
 		7B2952A51D2A44A3000B9D60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B2952A41D2A44A3000B9D60 /* Assets.xcassets */; };
 		7B2952A81D2A44A3000B9D60 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B2952A61D2A44A3000B9D60 /* LaunchScreen.storyboard */; };
+		E42EBC0E2145FAA9000AB99B /* workflow-walkthrough.md in Resources */ = {isa = PBXBuildFile; fileRef = E42EBC0D2145FAA9000AB99B /* workflow-walkthrough.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		7B2952A41D2A44A3000B9D60 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7B2952A71D2A44A3000B9D60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7B2952A91D2A44A3000B9D60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E42EBC0D2145FAA9000AB99B /* workflow-walkthrough.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "workflow-walkthrough.md"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +40,7 @@
 		7B2952911D2A44A3000B9D60 = {
 			isa = PBXGroup;
 			children = (
+				E42EBC0D2145FAA9000AB99B /* workflow-walkthrough.md */,
 				7B29529C1D2A44A3000B9D60 /* Checklists */,
 				7B29529B1D2A44A3000B9D60 /* Products */,
 			);
@@ -128,6 +131,7 @@
 			files = (
 				7B2952A81D2A44A3000B9D60 /* LaunchScreen.storyboard in Resources */,
 				7B2952A51D2A44A3000B9D60 /* Assets.xcassets in Resources */,
+				E42EBC0E2145FAA9000AB99B /* workflow-walkthrough.md in Resources */,
 				7B2952A31D2A44A3000B9D60 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

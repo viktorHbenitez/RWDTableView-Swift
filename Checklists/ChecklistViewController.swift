@@ -15,7 +15,12 @@ class ChecklistViewController: UITableViewController {
   let row2text = "Learn iOS development"
   let row3text = "Soccer practice"
   let row4text = "Eat ice cream"
-
+  
+  var row0checked = true
+  var row1checked = false
+  var row2checked = true
+  var row3checked = false
+  var row4checked = true
   
   
   
@@ -38,7 +43,7 @@ class ChecklistViewController: UITableViewController {
                           cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
     let cell = tableView.dequeueReusableCell(
-                                 withIdentifier: "ChecklistItem", for: indexPath)
+      withIdentifier: "ChecklistItem", for: indexPath)
     
     // make sure you select the label with the correct tag in the cell
     let label = cell.viewWithTag(1000) as! UILabel
@@ -55,21 +60,56 @@ class ChecklistViewController: UITableViewController {
       label.text = row4text
     }
     
+    configureCheckmark(for: cell, at: indexPath)
+    
     return cell
   }
-
+  
   override func tableView(_ tableView: UITableView,
                           didSelectRowAt indexPath: IndexPath) {
     
-    if let cell = tableView.cellForRow(at: indexPath) {
-     
-      if cell.accessoryType == .none {
-        cell.accessoryType = .checkmark
-      } else {
-        cell.accessoryType = .none
+
+    if let cell = tableView.cellForRow(at: indexPath){
+      // Change the value of the value
+      if indexPath.row == 0 {
+        row0checked = !row0checked  // Change the value and see global
+      } else if indexPath.row == 1 {
+        row1checked = !row1checked
+      } else if indexPath.row == 2 {
+        row2checked = !row2checked
+      } else if indexPath.row == 3 {
+        row3checked = !row3checked
+      } else if indexPath.row == 4 {
+        row4checked = !row4checked
       }
+      
+      configureCheckmark(for: cell, at: indexPath)
+      
     }
     
     tableView.deselectRow(at: indexPath, animated: true)
   }
+  
+  func configureCheckmark(for cell: UITableViewCell,
+                          at indexPath: IndexPath) {
+    var isChecked = false // Inital value switch off
+    
+    if indexPath.row == 0 {
+      isChecked = row0checked
+    } else if indexPath.row == 1 {
+      isChecked = row1checked
+    } else if indexPath.row == 2 {
+      isChecked = row2checked
+    } else if indexPath.row == 3 {
+      isChecked = row3checked
+    } else if indexPath.row == 4 {
+      isChecked = row4checked
+    }
+    if isChecked {  // isOFF .none 
+      cell.accessoryType = .checkmark
+    } else {
+      cell.accessoryType = .none
+    }
+  }
+  
 }
