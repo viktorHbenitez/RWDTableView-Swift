@@ -5,7 +5,7 @@
 ### Array to store data
 
 
-![imagen](../master/assets/sketch2.gif)  
+![imagen](../master/assets/sketch1.gif)  
 
 ## Change the checkmark with global values  (Refactor)
 
