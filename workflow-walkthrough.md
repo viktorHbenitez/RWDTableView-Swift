@@ -7,61 +7,69 @@
 
 ![imagen](../master/assets/sketch2.gif)  
 
-## Change the checkMark with global values
+## Change the checkmark with global values  (Refactor)
 
 ### Steps: 
 
 1. Configure the checkmark in `override func tableView(_ tableView: UITableView,
-cellForRowAt indexPath: IndexPath) -> UITableViewCell` use the method `configureCheckmark(for: cell, at: indexPath)`  
-2. loop `configureCheckmark(for: cell, at: indexPath)` method and set or unset the checkmark  
+cellForRowAt indexPath: IndexPath) -> UITableViewCell` 
+1.1  configure the checkmark `configureCheckmark(for: cell, with: item)` front  
+1. 2 configure the text label `configureText(for: cell, with: item)`  
+  
 
 ```swift
 
-// Configure the checkMark four cells
-
-var row0checked = true
-var row1checked = false
-var row2checked = true
-var row3checked = false
-var row4checked = true
-
 override func tableView(_ tableView: UITableView,
-                          cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    ...
+                          didSelectRowAt indexPath: IndexPath) {
     
-    configureCheckmark(for: cell, at: indexPath)
-    return cell
-}
-  
-func configureCheckmark(for cell: UITableViewCell,
-                          at indexPath: IndexPath) {
-    var isChecked = false // Inital value switch off
     
-    if indexPath.row == 0 {
-      isChecked = row0checked
-    } else if indexPath.row == 1 {
-      isChecked = row1checked
-    } else if indexPath.row == 2 {
-      isChecked = row2checked
-    } else if indexPath.row == 3 {
-      isChecked = row3checked
-    } else if indexPath.row == 4 {
-      isChecked = row4checked
+    if let cell = tableView.cellForRow(at: indexPath){ // get the cell configure view
+      
+      let item = items[indexPath.row]  // change the current check property when is tapped
+      item.toggleChecked() //      item.checked = !item.checked
+
+      
+//      configureCheckmark(for: cell, at: indexPath)
+      configureCheckmark(for: cell, with: item)
     }
     
-    // Initial TableViewCell values
-    
-    if isChecked {  // isOFF .none
+    tableView.deselectRow(at: indexPath, animated: true)
+  }
+
+
+  func configureCheckmark(for cell: UITableViewCell,
+                          with item: ChecklistItem) {
+    if item.checked {
       cell.accessoryType = .checkmark
     } else {
       cell.accessoryType = .none
     }
+  }
+  
+  func configureText(for cell: UITableViewCell, with item: ChecklistItem) {
+    let label = cell.viewWithTag(1000) as! UILabel
+    label.text = item.text
+  }
+  
+  // ******* old configure checkmark
+  
+  //  func configureCheckmark(for cell: UITableViewCell,
+  //                          at indexPath: IndexPath) {
+  //
+  //    let item = items[indexPath.row]
+  //    if item.checked {  // isOFF .none
+  //      cell.accessoryType = .checkmark
+  //    } else {
+  //      cell.accessoryType = .none
+  //    }
+  //  }
+  
 }
 ```
 RESULTS:    
 ![imagen](../feature-MVC/assets/image1.png)  
 
-## Change the value of the checkMark  when is tapped only 4 rows
+## Change the value of the checkMark  when is tapped
 
 ### Steps: 
 1. When is tapped the cell in `override func tableView(_ tableView: UITableView,

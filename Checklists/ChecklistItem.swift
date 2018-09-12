@@ -15,4 +15,10 @@ class ChecklistItem {
   var checked = false
   
   
+  func toggleChecked() {
+    self.checked = !self.checked
+  }
+
+  
 }
+
