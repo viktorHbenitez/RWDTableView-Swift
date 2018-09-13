@@ -105,6 +105,13 @@ didSelectRowAt indexPath: IndexPath)` change the value of the row value property
     tableView.deselectRow(at: indexPath, animated: true)
   }
 ```
+## Navigation Controller
+
+branch `git branch navigationController`  
+
+**Navigation controller:** Add a navigation controller to Checklists to allow navigation between screens and add a button to the navigation bar to allow adding new items.  
+**Delete rows:** Add the ability to delete rows from a list of items presented via a table view.  
+**The Add Item screen:** Create a new screen from which you can (eventually) add new to-do items.  
 
 
 

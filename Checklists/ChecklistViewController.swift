@@ -57,12 +57,15 @@ class ChecklistViewController: UITableViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
-  }
-  
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
+
+    self.navigationItem.title = "Checklist Item"
+    if #available(iOS 11.0, *) {
+      navigationController?.navigationBar.prefersLargeTitles = true
+    } else {
+      // Fallback on earlier versions
+    }
+    
+   
   }
   
   override func tableView(_ tableView: UITableView,
@@ -105,17 +108,27 @@ class ChecklistViewController: UITableViewController {
     
     tableView.deselectRow(at: indexPath, animated: true)
   }
+ 
   
-//  func configureCheckmark(for cell: UITableViewCell,
-//                          at indexPath: IndexPath) {
-//
-//    let item = items[indexPath.row]
-//    if item.checked {  // isOFF .none
-//      cell.accessoryType = .checkmark
-//    } else {
-//      cell.accessoryType = .none
-//    }
-//  }
+  @IBAction func addItem(){
+    
+    print("Add new item")
+    
+    // 1. Created a new ChecklistItem object.
+    let newRowIndex = items.count  // what the index of the new row
+    let item = ChecklistItem()
+    item.text = "I am a new row"
+    item.checked = false
+    items.append(item)  // 2. Added it to the data model.
+    
+    
+    // 3. Inserted a new row for it in the table view.
+    let indexPath = IndexPath(row: newRowIndex, section: 0)  // make an IndexPath object that points to the new row
+    let indexPaths = [indexPath] // creates a new, temporary array
+    tableView.insertRows(at: indexPaths, with: .automatic) // update tableview
+    
+    
+  }
   
   func configureCheckmark(for cell: UITableViewCell,
                           with item: ChecklistItem) {
