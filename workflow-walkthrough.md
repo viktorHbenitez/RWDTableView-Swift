@@ -111,7 +111,62 @@ branch `git branch navigationController`
 
 **Navigation controller:** Add a navigation controller to Checklists to allow navigation between screens and add a button to the navigation bar to allow adding new items.  
 **Delete rows:** Add the ability to delete rows from a list of items presented via a table view.  
-**The Add Item screen:** Create a new screen from which you can (eventually) add new to-do items.  
+**The Add Item scene:** Create a new screen from which you can (eventually) add new to-do items.  
+
+
+![imagen](../navigationController/assets/navigationController.gif)  
+
+### Navigation Controller
+
+1. Created a new ChecklistItem object.  
+2. Added it to the data model.  
+3. Inserted a new row for it in the table view.  
+
+```swift
+
+  @IBAction func addItem(){
+    
+    print("Add new item")
+    
+    // 1. Created a new ChecklistItem object.
+    let newRowIndex = items.count  // what the index of the new row
+    let item = ChecklistItem()
+    item.text = "I am a new row"
+    item.checked = false
+    
+    items.append(item)  // 2. Added it to the data model.
+    
+    // 3. Inserted a new row for it in the table view.
+    let indexPath = IndexPath(row: newRowIndex, section: 0)  // make an IndexPath object that points to the new row
+    let indexPaths = [indexPath] // creates a new, temporary array
+    tableView.insertRows(at: indexPaths, with: .automatic) // update tableview
+    
+    
+  }
+```
+
+### Delete rows
+
+1. Remove the item from the data model.  
+2. Delete the corresponding row from the table view.  
+
+```swift
+  override func tableView(
+    _ tableView: UITableView,
+    commit editingStyle: UITableViewCellEditingStyle,
+    forRowAt indexPath: IndexPath) {
+    
+    // 1. Remove the item from the data model.
+    items.remove(at: indexPath.row)
+    
+    // 2. Delete the corresponding row from the table view.
+    let indexPaths = [indexPath]
+    tableView.deleteRows(at: indexPaths, with: .automatic)
+  }
+  
+```
+### The Add Item screen
+ do not show large title `navigationItem.largeTitleDisplayMode = .never`  
 
 
 

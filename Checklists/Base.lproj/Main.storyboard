@@ -44,7 +44,7 @@
                     <navigationItem key="navigationItem" id="QaG-W7-l8r">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="GPV-A3-Wl1">
                             <connections>
-                                <action selector="addItem" destination="yQn-9K-nEj" id="DRS-0A-swu"/>
+                                <segue destination="n5f-CD-3w3" kind="show" id="rol-HQ-Dzt"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -52,6 +52,46 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="65f-aT-Qdd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1911.2" y="102.09895052473765"/>
+        </scene>
+        <!--Add Item-->
+        <scene sceneID="4Ah-El-kCF">
+            <objects>
+                <tableViewController id="n5f-CD-3w3" customClass="AddItemViewController" customModule="Checklists" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="1Ht-aG-KKf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="n4I-GB-saV">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="n4I-GB-saV" id="SDv-z6-a0C">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="n5f-CD-3w3" id="0uS-7v-B6h"/>
+                            <outlet property="delegate" destination="n5f-CD-3w3" id="tTk-wM-I9f"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Add Item" id="WbI-kU-Fl5">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="WPo-4z-FZS">
+                            <connections>
+                                <action selector="cancel" destination="n5f-CD-3w3" id="u53-eu-IV8"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="35a-wz-1Gw">
+                            <connections>
+                                <action selector="done" destination="n5f-CD-3w3" id="c05-YY-teU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6ES-fo-VCN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2652" y="102"/>
         </scene>
         <!--Item-->
         <scene sceneID="ke4-x9-a17">

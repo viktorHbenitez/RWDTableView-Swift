@@ -108,6 +108,19 @@ class ChecklistViewController: UITableViewController {
     
     tableView.deselectRow(at: indexPath, animated: true)
   }
+  
+  override func tableView(
+    _ tableView: UITableView,
+    commit editingStyle: UITableViewCellEditingStyle,
+    forRowAt indexPath: IndexPath) {
+    
+    // 1
+    items.remove(at: indexPath.row)
+    
+    // 2
+    let indexPaths = [indexPath]
+    tableView.deleteRows(at: indexPaths, with: .automatic)
+  }
  
   
   @IBAction func addItem(){
@@ -118,7 +131,7 @@ class ChecklistViewController: UITableViewController {
     let newRowIndex = items.count  // what the index of the new row
     let item = ChecklistItem()
     item.text = "I am a new row"
-    item.checked = false
+    item.checked = true
     items.append(item)  // 2. Added it to the data model.
     
     

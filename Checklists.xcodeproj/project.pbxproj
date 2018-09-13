@@ -14,6 +14,7 @@
 		7B2952A81D2A44A3000B9D60 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B2952A61D2A44A3000B9D60 /* LaunchScreen.storyboard */; };
 		E42EBC0E2145FAA9000AB99B /* workflow-walkthrough.md in Resources */ = {isa = PBXBuildFile; fileRef = E42EBC0D2145FAA9000AB99B /* workflow-walkthrough.md */; };
 		E42EBC1021460F42000AB99B /* ChecklistItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42EBC0F21460F42000AB99B /* ChecklistItem.swift */; };
+		E4ACF6EF214ABC9900F6CBAA /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4ACF6EE214ABC9900F6CBAA /* AddItemViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		7B2952A91D2A44A3000B9D60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E42EBC0D2145FAA9000AB99B /* workflow-walkthrough.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "workflow-walkthrough.md"; sourceTree = "<group>"; };
 		E42EBC0F21460F42000AB99B /* ChecklistItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistItem.swift; sourceTree = "<group>"; };
+		E4ACF6EE214ABC9900F6CBAA /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				7B2952A61D2A44A3000B9D60 /* LaunchScreen.storyboard */,
 				7B2952A91D2A44A3000B9D60 /* Info.plist */,
 				E42EBC0F21460F42000AB99B /* ChecklistItem.swift */,
+				E4ACF6EE214ABC9900F6CBAA /* AddItemViewController.swift */,
 			);
 			path = Checklists;
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B2952A01D2A44A3000B9D60 /* ChecklistViewController.swift in Sources */,
+				E4ACF6EF214ABC9900F6CBAA /* AddItemViewController.swift in Sources */,
 				E42EBC1021460F42000AB99B /* ChecklistItem.swift in Sources */,
 				7B29529E1D2A44A3000B9D60 /* AppDelegate.swift in Sources */,
 			);
